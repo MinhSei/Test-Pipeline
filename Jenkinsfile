@@ -3,20 +3,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building...'
         git(url: 'https://github.com/MinhSei/Test-Pipeline', branch: 'main')
       }
     }
 
-    stage('Test') {
+    stage('Front-End Test') {
       steps {
-        echo 'Testing...'
-      }
-    }
-
-    stage('Deploy') {
-      steps {
-        echo 'Deploying...'
+        sh 'ls -la'
+        git 'https://github.com/MinhSei/Test-Pipeline'
       }
     }
 
